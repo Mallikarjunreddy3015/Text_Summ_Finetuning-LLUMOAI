@@ -6,15 +6,32 @@
   <title>Hugging Face Space Integration</title>
   <style>
     /* Add any custom CSS styles here */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    gradio-app {
+      height: 100vh; /* Subtract the height of the heading */
+      width: 100%;
+    }
+
+    @keyframes border-color-change {
+      0% { border-color: red; }
+      25% { border-color: yellow; }
+      50% { border-color: green; }
+      75% { border-color: blue; }
+      100% { border-color: red; }
+    }
   </style>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.21.0/gradio.js"></script>
 </head>
 <body>
-  <h1>My Hugging Face Space</h1>
-  <iframe
-    src="https://animus-09-animus-09-led-finetuned-rp-summ.hf.space"
-    frameborder="0"
-    width="100%"
-    height="100%"
-  ></iframe>
+  <div style="border: 4px solid; animation: border-color-change 2s infinite;">
+    <gradio-app src="https://animus-09-animus-09-led-finetuned-rp-summ.hf.space"></gradio-app>
+  </div>
 </body>
 </html>
